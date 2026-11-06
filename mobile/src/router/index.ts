@@ -1,13 +1,16 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import type { RouteRecordRaw } from 'vue-router';
 
-import TabsPage from '../views/TabsPage.vue';
+import TabsPage from '@/views/TabsPage.vue';
+
+const generatedRoutes = Object.values(
+  import.meta.glob<{ default: RouteRecordRaw }>('./routes/**/*.ts', { eager: true }),
+).map((module) => module.default);
 
 const routes: RouteRecordRaw[] = [
-  {
-    path: '/',
-    redirect: '/tabs/tab1',
-  },
+
+  ...generatedRoutes,
+
   {
     path: '/tabs/',
     component: TabsPage,
