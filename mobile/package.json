@@ -19,9 +19,11 @@
     "make:page": "node scripts/pulso/cli.mjs page",
     "make:store": "node scripts/pulso/cli.mjs store",
     "make:component": "node scripts/pulso/cli.mjs component",
-    "make:layout": "node scripts/pulso/cli.mjs layout"
+    "make:layout": "node scripts/pulso/cli.mjs layout",
+    "make:type": "node scripts/pulso/cli.mjs type"
   },
   "dependencies": {
+    "@aparajita/capacitor-secure-storage": "^8.0.1",
     "@capacitor-community/sqlite": "^8.1.1",
     "@capacitor/android": "^8.6.0",
     "@capacitor/app": "8.1.2",
