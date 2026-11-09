@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('measurement_id')->constrained('body_measurements');
             $table->string('metric');
-            $table->string('side');
+            $table->string('aside')->nullable();
             $table->decimal('value_cm', 5, 2);
             $table->timestamps();
         });
