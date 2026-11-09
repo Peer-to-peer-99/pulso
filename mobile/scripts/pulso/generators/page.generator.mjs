@@ -2,12 +2,18 @@ export function generatePage({ folder, pascalName }) {
   const viewPath = `src/views/${folder}/${pascalName}View.vue`;
   const content = `
 <script setup lang="ts">
+import {IonPage, IonContent} from '@ionic/vue';
 </script>
 
 <template>
-  <main>
-    <h1>${pascalName}</h1>
-  </main>
+    <ion-page>
+      <ion-content>
+         <main>
+           <h1>${pascalName}</h1>
+         </main>
+      </ion-content>
+    </ion-page>
+
 </template>
 `;
 

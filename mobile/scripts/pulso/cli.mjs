@@ -4,6 +4,7 @@ import { makePage } from './commands/make-page.mjs';
 import { makeStore } from './commands/make-store.mjs';
 import { makeComponent } from './commands/make-component.mjs';
 import { makeLayout} from './commands/make-layout.mjs';
+import { makeType } from './commands/make-type.mjs';
 
 function run() {
   try {
@@ -25,6 +26,10 @@ function run() {
 
       case 'layout':
         createdFiles = makeLayout(options);
+        break;
+
+      case 'type':
+        createdFiles = makeType(options);
         break;
 
       default:
