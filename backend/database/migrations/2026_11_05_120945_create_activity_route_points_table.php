@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('activity_route_points', function (Blueprint $table) {
             $table->id();
             $table->foreignId('activity_route_id')->constrained('activity_routes');
+            $table->unsignedInteger('sequence_number');
             $table->decimal('latitude', 10, 7);
             $table->decimal('longitude', 10, 7);
             $table->decimal('altitude_meters', 8, 2)->nullable();
@@ -21,6 +22,8 @@ return new class extends Migration
             $table->decimal('speed_mps', 7, 3)->nullable();
             $table->unsignedSmallInteger('heart_rate')->nullable();
             $table->timestamps();
+            $table->unique(['activity_route_id', 'sequence_number']);
+            $table->unique(['activity_route_id', 'recorded_at']);
         });
     }
 

@@ -11,12 +11,20 @@ class Activity extends Model
     protected $fillable = [
         'user_id',
         'type',
+        'tracking_mode',
+        'status',
+        'title',
         'started_at',
         'finished_at',
         'duration_seconds',
+        'moving_time_seconds',
         'distance_meters',
         'calories',
-        'notes'
+        'notes',
+        'average_speed_mps',
+        'average_pace_seconds_per_km',
+        'elevation_gain_meters',
+        'visibility',
     ];
 
     public function user(): BelongsTo

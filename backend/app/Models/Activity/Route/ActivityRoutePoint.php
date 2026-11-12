@@ -9,6 +9,7 @@ class ActivityRoutePoint extends Model
 {
     protected $fillable = [
         'activity_route_id',
+        'sequence_number',
         'latitude',
         'longitude',
         'altitude_meters',
