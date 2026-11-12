@@ -2,6 +2,7 @@ import type {RouteRecordRaw} from 'vue-router';
 import TabsPage from '@/components/tabs/TabsPage.vue';
 import HomeView from '@/views/HomeView.vue';
 import ProgressView from '@/views/progress/ProgressView.vue';
+import WorkoutView from '@/views/workout/WorkoutView.vue';
 
 
 const tabsRoutes: RouteRecordRaw = {
@@ -32,8 +33,13 @@ const tabsRoutes: RouteRecordRaw = {
           path: 'photos',
           component: () => import('@/views/progress/PhotosView.vue'),
         },
+
       ],
     },
+    {
+      path: 'workout',
+      component: WorkoutView
+    }
   ],
 };
 

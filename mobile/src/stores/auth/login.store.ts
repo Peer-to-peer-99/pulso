@@ -23,6 +23,22 @@ export const useAuthStore = defineStore('auth-login', {
       }finally {
         this.loading = false;
       }
+    },
+    async me(): Promise<void>{
+      this.loading = true;
+      try {
+        const response =  await AuthApiService.me();
+        console.log(response);
+        this.user = response;
+        this.isAuthenticated = true;
+      }catch (error){
+        this.user = null;
+        this.isAuthenticated = false;
+        await AuthTokenService.remove();
+        throw error;
+      }finally {
+        this.loading = false;
+      }
     }
   },
 
